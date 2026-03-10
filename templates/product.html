@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+<h2>🛒 MiniShop</h2>
+
+<div>
+<a href="/">Home</a>
+<a href="/cart">Cart</a>
+</div>
+</div>
+
+<div class="product-page">
+
+<a href="/" class="back">⬅ Back</a>
+
+<img src="{{ product.image }}">
+
+<h2>{{ product.name }}</h2>
+
+<h3>Price : ${{ product.price }}</h3>
+
+<a href="/add-to-cart/{{ product.id }}">
+<button class="cart-btn">Add to Cart</button>
+</a>
+
+{% if request.args.get('added') %}
+<h4 class="success">Product added successfully to cart</h4>
+{% endif %}
+
+</div>
+
+</body>
+</html>
