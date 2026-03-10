@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = "flask-ecommerce-app"
-        DOCKER_IMAGE = "shivavaddi/flask-ecommerce-app"
         CONTAINER_NAME = "flask-container"
     }
 
@@ -21,18 +20,6 @@ pipeline {
             }
         }
 
-        stage('Tag Docker Image') {
-            steps {
-                sh 'docker tag $IMAGE_NAME:latest $DOCKER_IMAGE:latest'
-            }
-        }
-
-        stage('Push to Docker Hub') {
-            steps {
-                sh 'docker push $DOCKER_IMAGE:latest'
-            }
-        }
-
         stage('Stop Old Container') {
             steps {
                 sh '''
@@ -44,7 +31,7 @@ pipeline {
 
         stage('Run New Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 --name $CONTAINER_NAME $DOCKER_IMAGE:latest'
+                sh 'docker run -d -p 5000:5000 --name $CONTAINER_NAME $IMAGE_NAME'
             }
         }
 
