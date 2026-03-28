@@ -135,6 +135,7 @@ Restart Nginx:
 
 sudo systemctl restart nginx
 ```
+  
 9. Future Improvements
 1.Deploy application using Kubernetes
 2.Use Terraform for AWS infrastructure
