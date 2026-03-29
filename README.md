@@ -1,26 +1,7 @@
-````markdown
-```markdown
-````
-
-And inside that, you again used:
-
-```
-```
-
-👉 This breaks parsing (especially in GitHub / YAML renderers)
+Here’s a clean, professional **README.md** you can directly use for your project 👇
 
 ---
 
-## ✅ FIXED VERSION (Clean & Professional)
-
-👉 **Remove the outer ```markdown block completely**
-👉 Keep only inner code blocks
-
----
-
-### 🔥 FINAL CORRECT README (COPY THIS)
-
-```markdown
 # 🚀 End-to-End CI/CD Pipeline for Python Flask Application
 
 ## 📌 Project Overview
@@ -29,94 +10,97 @@ This project demonstrates a complete **End-to-End CI/CD pipeline** for a Python 
 
 The pipeline automatically builds, tests, and deploys the application whenever new code is pushed to the GitHub repository. The application is containerized using Docker and deployed on an AWS EC2 instance, with Nginx acting as a reverse proxy.
 
-### Key Features:
-- Continuous Integration (CI)
-- Continuous Deployment (CD)
-- Containerization using Docker
-- Cloud Deployment on AWS
+This setup simulates a real-world DevOps workflow including:
+
+* Continuous Integration (CI)
+* Continuous Deployment (CD)
+* Containerization
+* Cloud Deployment
 
 ---
 
 ## 🏗️ Architecture Diagram
 
 ```
-
 Developer
-│
-▼
+   │
+   │ Push Code
+   ▼
 GitHub Repository
-│
-▼
+   │
+   │ Webhook Trigger
+   ▼
 Jenkins Pipeline
-│
-▼
-Docker Image
-│
-▼
+   │
+   │ Build Docker Image
+   ▼
 Docker Container
-│
-▼
+   │
+   │ Deploy Container
+   ▼
 AWS EC2 Instance
-│
-▼
+   │
+   │ Reverse Proxy
+   ▼
 Nginx Server
-│
-▼
-Flask Application
-
-````
+   │
+   ▼
+Flask Web Application
+```
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology      | Purpose                  |
-|----------------|--------------------------|
-| Python (Flask) | Backend Application      |
-| Docker         | Containerization         |
-| Jenkins        | CI/CD Automation         |
-| GitHub         | Source Code              |
-| AWS EC2        | Cloud Hosting            |
-| Nginx          | Reverse Proxy            |
-| Linux (Ubuntu) | Deployment Server        |
+| Technology     | Purpose                 |
+| -------------- | ----------------------- |
+| Python (Flask) | Backend Web Application |
+| Docker         | Containerization        |
+| Jenkins        | CI/CD Automation        |
+| GitHub         | Source Code Repository  |
+| AWS EC2        | Cloud Hosting           |
+| Nginx          | Reverse Proxy           |
+| Linux (Ubuntu) | Deployment Server       |
 
 ---
 
 ## 🔄 CI/CD Pipeline Flow
 
+The pipeline automates deployment whenever code is pushed.
+
 ### Workflow Steps:
 
-1. Developer pushes code to GitHub  
-2. GitHub triggers Jenkins (Webhook)  
-3. Jenkins pulls latest code  
-4. Docker image is built  
-5. Old container is stopped  
-6. Old container is removed  
-7. New container is started  
-8. Application deployed on EC2  
-9. Nginx routes traffic  
-10. Application goes live  
+1. Developer pushes code to GitHub
+2. GitHub webhook triggers Jenkins
+3. Jenkins pulls latest code
+4. Docker image is built
+5. Old container is stopped
+6. Old container is removed
+7. New container is started
+8. Application is deployed on EC2
+9. Nginx routes traffic to container
+10. Updated application goes live
 
 ---
 
 ## ⚙️ Jenkins Pipeline Stages
 
-- Clone Repository  
-- Build Docker Image  
-- Stop Running Container  
-- Remove Old Container  
-- Run New Container  
-- Deploy Application  
+* Clone GitHub Repository
+* Build Docker Image
+* Stop Running Container
+* Remove Old Container
+* Run New Container
+* Deploy Application
 
 ---
 
 ## 🖥️ Setup Instructions
 
-### 🔐 Connect to EC2
+### 🔐 Connect to AWS EC2
 
 ```bash
 ssh -i your-key.pem ubuntu@your-ec2-public-ip
-````
+```
 
 ---
 
@@ -187,7 +171,7 @@ docker stop <container_id>
 
 ## 🌍 Nginx Configuration
 
-Edit file:
+Edit config file:
 
 ```bash
 sudo nano /etc/nginx/sites-available/default
@@ -215,13 +199,13 @@ sudo systemctl restart nginx
 
 ## 🚀 Future Improvements
 
-* Kubernetes Deployment
-* Terraform for Infrastructure
-* AWS ECR Integration
-* Prometheus Monitoring
-* Grafana Dashboards
-* Automated Testing
-* Blue-Green Deployment
+* Deploy using Kubernetes
+* Use Terraform for infrastructure
+* Push Docker images to AWS ECR
+* Add Prometheus monitoring
+* Create Grafana dashboards
+* Add automated testing stage
+* Implement Blue-Green Deployment
 
 ---
 
@@ -232,4 +216,8 @@ Aspiring DevOps Engineer
 
 🔗 GitHub: [https://github.com/shiva-6300](https://github.com/shiva-6300)
 
-````
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
