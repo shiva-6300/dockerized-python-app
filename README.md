@@ -1,5 +1,3 @@
-Here’s a clean, professional **README.md** you can directly use for your project 👇
-
 ---
 
 # 🚀 End-to-End CI/CD Pipeline for Python Flask Application
@@ -217,7 +215,3 @@ Aspiring DevOps Engineer
 🔗 GitHub: [https://github.com/shiva-6300](https://github.com/shiva-6300)
 
 ---
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub!
